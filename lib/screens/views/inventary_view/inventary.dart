@@ -17,7 +17,7 @@ class showInventary extends StatelessWidget {
   //get docIDs
 
   const showInventary({super.key});
-
+  //Hola mundos
   @override
   Widget build(BuildContext context) {
     CollectionReference productos =

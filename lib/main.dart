@@ -3,17 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      options: const FirebaseOptions(
-          apiKey: "AIzaSyAS1kasExIpREPONXnwRoegMHEg-z2bmeM",
-          authDomain: "inventory-management-6ae0f.firebaseapp.com",
-          projectId: "inventory-management-6ae0f",
-          storageBucket: "inventory-management-6ae0f.appspot.com",
-          messagingSenderId: "645446013229",
-          appId: "1:645446013229:web:e0fa376c4ffaccbaaf03a4"));
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(const MyApp());
 }
