@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -42,23 +40,41 @@ class showInventary extends StatelessWidget {
                     }
 
                     if (snapshot.hasData && snapshot.data!.docs.isEmpty) {
-                      return Text("Document does not exist");
+                      return Text("No hay Productos Aún!");
                     }
 
                     //Data is output to the user
                     if (snapshot.connectionState == ConnectionState.done) {
                       List<QueryDocumentSnapshot> rawData = snapshot.data!.docs;
-                      //return Text("Full Name: ${data['full_name']} ${data['last_name']}");
-                      List<DataRow> Data = rawData.map((e){
+                      List<DataRow> data = rawData.map((e) {
                         return DataRow(cells: [
-                          DataCell(
-                            Text(e.get('nombre')),
-                          ),
-                        ])
-                      }).toList()
+                          DataCell(Text(e.get('nombre'))),
+                          DataCell(Text(e.get('unidad'))),
+                          DataCell(Text(e.get('costo').toString())),
+                          DataCell(Text(e.get('cantidad').toString())),
+                        ]);
+                      }).toList();
+
+                      return DataTable(
+                        columns: const [
+                          DataColumn(label: Text('Nombre')),
+                          DataColumn(label: Text('Unidad')),
+                          DataColumn(label: Text('Precio'), numeric: true),
+                          DataColumn(label: Text('Cantidad'), numeric: true),
+                        ],
+                        rows: data,
+                      );
                     }
 
-                    return DataTable(columns: [DataRow()], rows: rows)
+                    return DataTable(
+                      columns: const [
+                        DataColumn(label: Text('Nombre')),
+                        DataColumn(label: Text('Unidad')),
+                        DataColumn(label: Text('Precio')),
+                        DataColumn(label: Text('Cantidad')),
+                      ],
+                      rows: [],
+                    );
                   })),
         ),
       ],
