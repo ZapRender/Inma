@@ -1,5 +1,5 @@
 import 'package:employed_view_page/constants.dart';
-import 'package:employed_view_page/screens/views/inventary_view/inventary.dart';
+import 'package:employed_view_page/screens/views/inventary_view/components/inventary.dart';
 import 'package:flutter/material.dart';
 
 import 'components/header.dart';

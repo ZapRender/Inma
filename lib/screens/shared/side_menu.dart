@@ -11,31 +11,47 @@ class SideMenu extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const DrawerHeader(
-              child: Icon(
-                Icons.access_alarm_outlined,
-              ),
-            ),
+            DrawerHeader(
+                child: Row(
+              children: const [
+                Icon(
+                  Icons.sports_bar,
+                  color: Colors.white,
+                  size: 70,
+                ),
+                Text(
+                  'INMA',
+                  style: TextStyle(fontSize: 60, color: Colors.white),
+                )
+              ],
+            )),
             DrawerListTile(
               title: "Inventario",
-              icons: const Icon(Icons.accessible_sharp, color: Colors.white54),
+              icons:
+                  const Icon(Icons.inventory_outlined, color: Colors.white54),
               press: () {},
             ),
             DrawerListTile(
               title: "Facturas",
-              icons:
-                  const Icon(Icons.accessibility_sharp, color: Colors.white54),
+              icons: const Icon(Icons.keyboard_alt_outlined,
+                  color: Colors.white54),
               press: () {},
             ),
             DrawerListTile(
               title: "Productos",
-              icons: const Icon(Icons.account_balance, color: Colors.white54),
+              icons:
+                  const Icon(Icons.sports_bar_outlined, color: Colors.white54),
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "Cuadre",
+              icons:
+                  const Icon(Icons.local_atm_outlined, color: Colors.white54),
               press: () {},
             ),
             DrawerListTile(
               title: "Usuario",
-              icons:
-                  const Icon(Icons.account_circle_sharp, color: Colors.white54),
+              icons: const Icon(Icons.person_2_outlined, color: Colors.white54),
               press: () {},
             )
           ],

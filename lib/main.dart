@@ -1,4 +1,6 @@
 import 'package:employed_view_page/screens/main_screen.dart';
+import 'package:employed_view_page/screens/views/homepage.dart';
+import 'package:employed_view_page/screens/views/login/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Admin Panel',
+      title: 'INMA',
       initialRoute: '/homepage',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: bgColor,
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme.apply(bodyColor: Colors.white)),
         canvasColor: secondaryColor,
       ),
-      home: const MainScreen(),
+      home: const HomePages(),
     );
   }
 }

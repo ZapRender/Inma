@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
     return Row(
       children: [
         Text(
-          "Inventary",
+          "Inventario",
           style: Theme.of(context).textTheme.titleLarge,
         ),
         const Spacer(),
